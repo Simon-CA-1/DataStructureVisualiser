@@ -5,6 +5,7 @@
   padding: 10px 20px;
   background: #f5f5f5;
   color: #222;
+  font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .navbar.dark {
@@ -15,6 +16,7 @@
 .navbar-title {
   font-weight: bold;
   font-size: 1.2em;
+  font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .navbar-list {
@@ -22,12 +24,14 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .navbar-item {
   margin: 0 15px;
   cursor: pointer;
   position: relative;
+  font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .dropdown {
@@ -42,6 +46,17 @@
   padding: 8px 0;
   min-width: 150px;
   z-index: 1;
+  font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .navbar.dark .dropdown {
@@ -52,18 +67,77 @@
 .dropdown-item {
   padding: 8px 20px;
   cursor: pointer;
+  font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .mode-toggle {
   padding: 6px 12px;
   border-radius: 20px;
   border: none;
-  background: #ddd;
   color: #222;
   cursor: pointer;
+  font-size: 1.2em;
+  transition: transform 0.2s;
+  background: #f5f5f5; 
+  font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.mode-toggle:hover {
+  transform: scale(1.2);
 }
 
 .navbar.dark .mode-toggle {
-  background: #444;
+  background: #222; 
   color: #fff;
+}
+
+.navbar.dark .mode-toggle:hover {
+  background: #222;
+  transform: scale(1.2);
+}
+
+#home-button {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: none;
+  font-size: 1.2em;
+  color: #222;
+  cursor: pointer;
+  transition: transform 0.2s;
+  background: #f5f5f5;
+  font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+#home-button:hover {
+  transform: scale(1.2);
+}
+.navbar.dark #home-button {
+  background: #222;
+  color: #fff;
+}
+
+.navbar-btn {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: none;
+  font-size: large;
+  color: #222;
+  cursor: pointer;
+  background: #f5f5f5;
+  transition: transform 0.2s;
+  font-weight: bold;
+  font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.navbar-btn:hover {
+  transform: scale(1.2);
+}
+
+.navbar.dark .navbar-btn {
+  background: #222;
+  color: #fff;
+}
+
+.navbar.dark .navbar-btn:hover {
+  background: #222;
+  transform: scale(1.2);
 }

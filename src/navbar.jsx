@@ -9,25 +9,37 @@ function Navbar() {
 
   return (
     <nav className={`navbar${darkMode ? " dark" : ""}`}>
-      <div className="navbar-title">Data Structure Visualiser</div>
+      <button className="navbar-title navbar-btn">Data Structure Visualiser</button>
       <ul className="navbar-list">
-        <li className="navbar-item">Home</li>
+        <li className="navbar-item">
+          <button id="home-button">Home</button>
+        </li>
         <li
           className="navbar-item"
           onMouseEnter={() => setDropdownOpen(true)}
           onMouseLeave={() => setDropdownOpen(false)}
         >
-          Data Structures ▼
-          {dropdownOpen && (
-            <ul className="dropdown">
-              <li className="dropdown-item">Array</li>
-              <li className="dropdown-item">Linked List</li>
-              <li className="dropdown-item">Stack</li>
-              <li className="dropdown-item">Queue</li>
-              <li className="dropdown-item">Tree</li>
-              <li className="dropdown-item">Graph</li>
-            </ul>
-          )}
+          <button className="navbar-btn">Data Structures ▼</button>
+          <ul className={`dropdown${dropdownOpen ? " show" : ""}`}>
+            <li className="dropdown-item">
+              <button className="navbar-btn">Array</button>
+            </li>
+            <li className="dropdown-item">
+              <button className="navbar-btn">Linked List</button>
+            </li>
+            <li className="dropdown-item">
+              <button className="navbar-btn">Stack</button>
+            </li>
+            <li className="dropdown-item">
+              <button className="navbar-btn">Queue</button>
+            </li>
+            <li className="dropdown-item">
+              <button className="navbar-btn">Tree</button>
+            </li>
+            <li className="dropdown-item">
+              <button className="navbar-btn">Graph</button>
+            </li>
+          </ul>
         </li>
         <li className="navbar-item">
           <button onClick={handleToggle} className="mode-toggle">
