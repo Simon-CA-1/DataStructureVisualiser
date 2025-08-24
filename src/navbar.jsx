@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./navbar.css";
 
 function Navbar() {
@@ -9,10 +10,14 @@ function Navbar() {
 
   return (
     <nav className={`navbar${darkMode ? " dark" : ""}`}>
-      <button className="navbar-title navbar-btn">Data Structure Visualiser</button>
+      <Link to="/" className="navbar-title navbar-btn">
+        Data Structure Visualiser
+      </Link>
       <ul className="navbar-list">
         <li className="navbar-item">
-          <button id="home-button">Home</button>
+          <Link to="/" className="navbar-btn">
+            Home
+          </Link>
         </li>
         <li
           className="navbar-item"
@@ -22,22 +27,22 @@ function Navbar() {
           <button className="navbar-btn">Data Structures ▼</button>
           <ul className={`dropdown${dropdownOpen ? " show" : ""}`}>
             <li className="dropdown-item">
-              <button className="navbar-btn">Array</button>
+              <Link to="/array" className="navbar-btn">Array</Link>
             </li>
             <li className="dropdown-item">
-              <button className="navbar-btn">Linked List</button>
+              <Link to="/linked-list" className="navbar-btn">Linked List</Link>
             </li>
             <li className="dropdown-item">
-              <button className="navbar-btn">Stack</button>
+              <Link to="/stack" className="navbar-btn">Stack</Link>
             </li>
             <li className="dropdown-item">
-              <button className="navbar-btn">Queue</button>
+              <Link to="/queue" className="navbar-btn">Queue</Link>
             </li>
             <li className="dropdown-item">
-              <button className="navbar-btn">Tree</button>
+              <Link to="/tree" className="navbar-btn">Tree</Link>
             </li>
             <li className="dropdown-item">
-              <button className="navbar-btn">Graph</button>
+              <Link to="/graph" className="navbar-btn">Graph</Link>
             </li>
           </ul>
         </li>
