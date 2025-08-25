@@ -3,4 +3,5 @@ body {
   background: #f5f5f5;
   color: #222;
   font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
 }

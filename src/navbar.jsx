@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 
@@ -7,6 +7,11 @@ function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const handleToggle = () => setDarkMode(!darkMode);
+
+  useEffect(() => {
+    document.body.style.background = darkMode ? "#222" : "#f5f5f5";
+    document.body.style.color = darkMode ? "#fff" : "#222";
+  }, [darkMode]);
 
   return (
     <nav className={`navbar${darkMode ? " dark" : ""}`}>
@@ -27,22 +32,22 @@ function Navbar() {
           <button className="navbar-btn">Data Structures ▼</button>
           <ul className={`dropdown${dropdownOpen ? " show" : ""}`}>
             <li className="dropdown-item">
-              <Link to="/array" className="navbar-btn">Array</Link>
+              <Link to="/Array" className="navbar-btn">Array</Link>
             </li>
             <li className="dropdown-item">
-              <Link to="/linked-list" className="navbar-btn">Linked List</Link>
+              <Link to="/Linked-List" className="navbar-btn">Linked List</Link>
             </li>
             <li className="dropdown-item">
-              <Link to="/stack" className="navbar-btn">Stack</Link>
+              <Link to="/Stack" className="navbar-btn">Stack</Link>
             </li>
             <li className="dropdown-item">
-              <Link to="/queue" className="navbar-btn">Queue</Link>
+              <Link to="/Queue" className="navbar-btn">Queue</Link>
             </li>
             <li className="dropdown-item">
-              <Link to="/tree" className="navbar-btn">Tree</Link>
+              <Link to="/Tree" className="navbar-btn">Tree</Link>
             </li>
             <li className="dropdown-item">
-              <Link to="/graph" className="navbar-btn">Graph</Link>
+              <Link to="/Graph" className="navbar-btn">Graph</Link>
             </li>
           </ul>
         </li>

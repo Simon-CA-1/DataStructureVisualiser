@@ -1,8 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import NotFound from "./NotFound.jsx";
+import Navbar from "./navbar.jsx";
+import "./Visualiser.css";
 
-const validTypes = ["array", "stack", "queue", "tree", "graph", "linked-list"];
+const validTypes = ["Array", "Stack", "Queue", "Tree", "Graph", "Linked-List"];
 
 function Visualiser() {
   const { id } = useParams();
@@ -14,10 +16,12 @@ function Visualiser() {
   else 
   {
     return (
+      <>
+      <Navbar />
       <div>
-        <h1>{id} Visualisation</h1>
-        {/* Add your visualisation component here */}
+        <h3 className="visualisation-title">{id} Visualisation</h3>
       </div>
+      </>
     );
   }
 }
