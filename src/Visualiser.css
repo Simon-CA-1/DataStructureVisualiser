@@ -1,3 +1,37 @@
 .visualisation-title {
   text-align: center;
 }
+
+.visualisation-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55vh;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 5px;
+  background-color: rgb(231, 231, 231);
+}
+body.dark .visualisation-area {
+  background-color: rgb(50, 50, 50);
+  border: 1px solid #444;
+  transition: background-color 0.3s ease, border 0.3s ease;
+}
+.visualisation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55vh;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 5px;
+  background-color: rgb(231, 231, 231);
+}

@@ -9,6 +9,7 @@ function Navbar() {
   const handleToggle = () => setDarkMode(!darkMode);
 
   useEffect(() => {
+    document.body.classList.toggle("dark", darkMode);
     document.body.style.background = darkMode ? "#222" : "#f5f5f5";
     document.body.style.color = darkMode ? "#fff" : "#222";
   }, [darkMode]);

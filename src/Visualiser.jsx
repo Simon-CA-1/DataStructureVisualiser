@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import NotFound from "./NotFound.jsx";
 import Navbar from "./navbar.jsx";
 import "./Visualiser.css";
-
 const validTypes = ["Array", "Stack", "Queue", "Tree", "Graph", "Linked-List"];
 
 function Visualiser() {
@@ -21,6 +20,13 @@ function Visualiser() {
       <div>
         <h3 className="visualisation-title">{id} Visualisation</h3>
       </div>
+      <div className="visualisation-area">
+      </div>
+      <div >
+          <button>Insert</button>
+          <button>Delete</button>
+          <button>Update</button>
+        </div>
       </>
     );
   }
