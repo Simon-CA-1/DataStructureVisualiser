@@ -4,10 +4,10 @@ import NotFound from "./NotFound.jsx";
 import Navbar from "./navbar.jsx";
 import "./Visualiser.css";
 const validTypes = ["Array", "Stack", "Queue", "Tree", "Graph", "Linked-List"];
-
+const functions=[["Add","Remove"],["Push","Pop","Peek"],["Enqueue","Dequeue","Peek"],["Insert","Delete","Find"],["AddEdge","RemoveEdge","FindPath"],["InsertFirst","InsertLast","DeleteFirst","DeleteLast"]]
 function Visualiser() {
   const { id } = useParams();
-
+  const index=validTypes.indexOf(id);
   if (!validTypes.includes(id)) 
   {
     return <NotFound />;
@@ -22,11 +22,11 @@ function Visualiser() {
       </div>
       <div className="visualisation-area">
       </div>
-      <div >
-          <button>Insert</button>
-          <button>Delete</button>
-          <button>Update</button>
-        </div>
+      <div className="function-buttons">
+          {functions[index].map((func, i) => (
+            <button key={i}>{func}</button>
+          ))}
+      </div>
       </>
     );
   }

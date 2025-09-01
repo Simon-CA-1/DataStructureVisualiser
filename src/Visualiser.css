@@ -35,3 +35,37 @@ body.dark .visualisation-area {
   margin-bottom: 5px;
   background-color: rgb(231, 231, 231);
 }
+.function-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+}
+.function-buttons button {
+  margin: 0 8px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.function-buttons button:hover {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+body.dark .function-buttons button:hover {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+body.dark .function-buttons button {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid white;
+}
