@@ -15,6 +15,7 @@ const functions = [
   ["AddEdge", "RemoveEdge", "FindPath"],
   ["InsertFirst", "InsertLast", "DeleteFirst", "DeleteLast"],
 ];
+const i = 0;
 
 function Visualiser() {
   const { id } = useParams();
@@ -25,9 +26,40 @@ function Visualiser() {
     return <NotFound />;
   }
 
-  const handleInsert = () => {
+  const handleInsertLast = () => {
     const newNode = { id: nodes.length + 1, x: nodes.length * 120 + 60, y: 100 };
     setNodes([...nodes, newNode]);
+  };
+
+  const handleDeleteFirst = () => {
+    if (nodes.length === 0) return;
+    const firstNode = nodes[0];
+
+    gsap.to(`#node-${firstNode.id}`, {
+      scale: 0,
+      opacity: 0,
+      duration: 0.6,
+      ease: "back.in(1.7)",
+      onComplete: () => {
+        const updated = nodes.slice(1).map((n, i) => ({
+          ...n,
+          x: i * 120 + 60,
+        }));  
+        setNodes(updated);
+      },
+    });
+
+    gsap.to(`#text-${firstNode.id}`, {
+      opacity: 0,
+      duration: 0.4,
+    });
+
+    if (nodes.length > 1) {
+      gsap.to(`#line-${nodes[1].id}`, {
+        strokeDashoffset: 200,
+        duration: 0.6,
+      });
+    }
   };
 
   useEffect(() => {
@@ -108,7 +140,16 @@ function Visualiser() {
       </div>
       <div className="function-buttons">
         {functions[index].map((func, i) => (
-          <button key={i} onClick={func.toLowerCase().includes("insert") ? handleInsert : undefined}>
+          <button
+            key={i}
+            onClick={
+              func.toLowerCase().includes("insertlast")
+                ? handleInsertLast
+                : func.toLowerCase().includes("deletefirst")
+                ? handleDeleteFirst
+                : undefined
+            }
+          >
             {func}
           </button>
         ))}
