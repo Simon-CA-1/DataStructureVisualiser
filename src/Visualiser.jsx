@@ -15,20 +15,20 @@ const functions = [
   ["AddEdge", "RemoveEdge", "FindPath"],
   ["InsertFirst", "InsertLast", "DeleteFirst", "DeleteLast"],
 ];
-const i = 0;
-
 function Visualiser() {
   const { id } = useParams();
   const index = validTypes.indexOf(id);
   const [nodes, setNodes] = useState([]);
+  const [nextId, setNextId] = useState(1);
 
   if (!validTypes.includes(id)) {
     return <NotFound />;
   }
 
   const handleInsertLast = () => {
-    const newNode = { id: nodes.length + 1, x: nodes.length * 120 + 60, y: 100 };
+    const newNode = { id: nextId, x: nodes.length * 120 + 60, y: 100 };
     setNodes([...nodes, newNode]);
+    setNextId(nextId + 1);
   };
 
   const handleDeleteFirst = () => {
@@ -44,7 +44,7 @@ function Visualiser() {
         const updated = nodes.slice(1).map((n, i) => ({
           ...n,
           x: i * 120 + 60,
-        }));  
+        }));
         setNodes(updated);
       },
     });
