@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./navbar.css";
 
 function Navbar() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const handleToggle = () => setDarkMode(!darkMode);
