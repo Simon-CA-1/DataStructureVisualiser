@@ -78,6 +78,9 @@ function Visualiser() {
         );
       }
     }
+    else{
+      setNextId(1);
+    }
   }, [nodes]);
 
   return (
