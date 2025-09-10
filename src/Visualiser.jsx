@@ -30,7 +30,12 @@ function Visualiser() {
     setNodes([...nodes, newNode]);
     setNextId(nextId + 1);
   };
-
+  const handleInsertFirst = () => {
+    const newNode = { id: nextId, x: 60, y: 100 };
+    const updated = nodes.map((n) => ({ ...n, x: n.x + 120 }));
+    setNodes([newNode, ...updated]);
+    setNextId(nextId + 1);
+  }
   const handleDeleteFirst = () => {
     if (nodes.length === 0) return;
     const firstNode = nodes[0];
@@ -61,7 +66,6 @@ function Visualiser() {
       });
     }
   };
-
   useEffect(() => {
     if (nodes.length > 0) {
       const lastNode = nodes[nodes.length - 1];
@@ -150,6 +154,8 @@ function Visualiser() {
                 ? handleInsertLast
                 : func.toLowerCase().includes("deletefirst")
                 ? handleDeleteFirst
+                : func.toLowerCase().includes("insertfirst")
+                ? handleInsertFirst
                 : undefined
             }
           >
