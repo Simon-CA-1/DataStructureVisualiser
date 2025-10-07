@@ -24,7 +24,35 @@ function Visualiser() {
   if (!validTypes.includes(id)) {
     return <NotFound />;
   }
+  const handleDeleteLast = () => {
+    if (nodes.length === 0) return;
+    const lastNode = nodes[nodes.length - 1];
+    gsap.to(`#node-${lastNode.id}`, {
+      scale: 0,
+      opacity: 0,
+      duration: 0.6,
+      ease: "back.in(1.7)",
+      onComplete: () => {
+        const updated = nodes.slice(0, -1).map((n, i) => ({
+          ...n,
+          x: i * 120 + 60,
+        }));
+        setNodes(updated);
+      },
+    });
 
+    gsap.to(`#text-${lastNode.id}`, {
+      opacity: 0,
+      duration: 0.4,
+    });
+
+    if (nodes.length > 1) {
+      gsap.to(`#line-${lastNode.id}`, {
+        strokeDashoffset: 200,
+        duration: 0.6,
+      });
+    }
+  };
   const handleInsertLast = () => {
     const newNode = { id: nextId, x: nodes.length * 120 + 60, y: 100 };
     setNodes([...nodes, newNode]);
@@ -156,6 +184,8 @@ function Visualiser() {
                 ? handleDeleteFirst
                 : func.toLowerCase().includes("insertfirst")
                 ? handleInsertFirst
+                : func.toLowerCase().includes("deletelast")
+                ? handleDeleteLast
                 : undefined
             }
           >
