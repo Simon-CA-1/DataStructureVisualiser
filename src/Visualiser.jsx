@@ -178,7 +178,7 @@ function Visualiser() {
           <button
             key={i}
             onClick={
-              func.toLowerCase().includes("insertlast")
+              (func.toLowerCase().includes("insertlast") || func.toLowerCase().includes("add") || func.toLowerCase().includes("push") || func.toLowerCase().includes("enqueue"))
                 ? handleInsertLast
                 : func.toLowerCase().includes("deletefirst")
                 ? handleDeleteFirst
