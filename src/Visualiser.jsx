@@ -180,11 +180,11 @@ function Visualiser() {
             onClick={
               (func.toLowerCase().includes("insertlast") || func.toLowerCase().includes("add") || func.toLowerCase().includes("push") || func.toLowerCase().includes("enqueue"))
                 ? handleInsertLast
-                : func.toLowerCase().includes("deletefirst")
+                : (func.toLowerCase().includes("deletefirst")||func.toLowerCase().includes("dequeue"))
                 ? handleDeleteFirst
-                : func.toLowerCase().includes("insertfirst")
+                : (func.toLowerCase().includes("insertfirst") || func.toLowerCase().includes("enqueue"))
                 ? handleInsertFirst
-                : func.toLowerCase().includes("deletelast")
+                : (func.toLowerCase().includes("deletelast")|| func.toLowerCase().includes("remove") || func.toLowerCase().includes("pop"))
                 ? handleDeleteLast
                 : undefined
             }
