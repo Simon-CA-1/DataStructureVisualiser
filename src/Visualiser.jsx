@@ -5,14 +5,11 @@ import Navbar from "./navbar.jsx";
 import "./Visualiser.css";
 import gsap from "gsap";
 
-const validTypes = ["Array", "Stack", "Queue", "Tree", "Graph", "Linked-List"];
+const validTypes = ["Stack", "Queue","Linked-List"];
 
 const functions = [
-  ["Add", "Remove"],
-  ["Push", "Pop", "Peek"],
-  ["Enqueue", "Dequeue", "Peek"],
-  ["Insert", "Delete", "Find"],
-  ["AddEdge", "RemoveEdge", "FindPath"],
+  ["Push", "Pop"],
+  ["Enqueue", "Dequeue"],
   ["InsertFirst", "InsertLast", "DeleteFirst", "DeleteLast"],
 ];
 function Visualiser() {

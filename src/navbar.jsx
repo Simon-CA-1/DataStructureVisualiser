@@ -33,9 +33,6 @@ function Navbar() {
           <button className="navbar-btn">Data Structures ▼</button>
           <ul className={`dropdown${dropdownOpen ? " show" : ""}`}>
             <li className="dropdown-item">
-              <Link to="/Array" className="navbar-btn">Array</Link>
-            </li>
-            <li className="dropdown-item">
               <Link to="/Linked-List" className="navbar-btn">Linked List</Link>
             </li>
             <li className="dropdown-item">
@@ -43,12 +40,6 @@ function Navbar() {
             </li>
             <li className="dropdown-item">
               <Link to="/Queue" className="navbar-btn">Queue</Link>
-            </li>
-            <li className="dropdown-item">
-              <Link to="/Tree" className="navbar-btn">Tree</Link>
-            </li>
-            <li className="dropdown-item">
-              <Link to="/Graph" className="navbar-btn">Graph</Link>
             </li>
           </ul>
         </li>
